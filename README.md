@@ -1,4 +1,4 @@
-# Affinidi Use Case Implementation - Driving License - Issuer
+# Banker's Guarantee
 
 ## Table of contents
 
@@ -6,7 +6,6 @@
 - [Initial Set Up](#how-to-setup)
 
   - [Generate Affinidi API Key](#generate-api-key)
-  - [Amazon SES Credentials](#amazon-ses)
   - [Firebase Credentials](#firebase)
   - [Configure .env File](#configure-.env-file)
 
@@ -15,9 +14,9 @@
 
 ## Introduction
 
-Welcome to Driving License Use Case - Issuer application. In this application, you will experience how does a normal applicant would like to sign up for a verifiable credential and thereafter how a Issuer checks the information and issues a verifiable credential to the applicant.
+In this application, the business owner applies for the Banker's guarantee which can be given to the Client as a financial security since it ensures the payment recovery even if the business owner fails to make the payment after the deal.
 
-You can either run this program in your local machine or try it out here: https://usecases.drivinglicense-issuer.vc-generator.com/
+You can either run this program in your local machine or try it out here: http://applicant.verifiable-credential.tech/
 
 ## Initial Set Up
 
@@ -29,23 +28,9 @@ Before you could use our API and SDK services, you would have to register to get
 2. Register for an account
 3. Store the `API Key` and `API Key Hash` safely
 
-
-### EmailJS 
-
-In case you want to use EmailJS for smtp please follow these steps.
-1. Register on EmailJS
-2. Create a service
-3. Create an template with the following structure
-![Alt text](public/emailjs.PNG?raw=true "Title")
-4. Save the Service ID, Template ID and User ID in the `.env` file.
-5. You can find the User ID in the Integration menu.
-
-
 ### Firebase
 
-Note: This step will be optional.
-
-In our issuer application, we will be using firebase to mimic issuer's database which stores all of the applications.
+We will be using firebase to mimic issuer's database which stores all of the applications.
 
 1. Go to Firebase Console https://console.firebase.google.com/
 2. Create a new Firestore
@@ -81,10 +66,6 @@ REACT_APP_FIREBASE_PROJECT_ID=<<Firebase's projectId>>
 REACT_APP_FIREBASE_STORAGEBUCKET=<<Firebase's storageBucket>>
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<<Firebase's messagingSenderId>>
 REACT_APP_FIREBASE_APP_ID=<<Firebase's appId>>
-
-REACT_APP_EMAIL_JS_SERVICE_ID=<<EmailJs service ID>>
-REACT_APP_EMAIL_JS_TEMPLATE_ID=<<EmailJs template ID>>
-REACT_APP_EMAIL_JS_USER_ID=<<EmailJs user ID>>
 ```
 
 ## How to run
@@ -94,7 +75,3 @@ REACT_APP_EMAIL_JS_USER_ID=<<EmailJs user ID>>
 3. Run `cp .env.example .env`
 4. Populate the credentials in `.env`
 5. Run `npm start`
-
-### Sequence
-
-Run Issuer, Holder and Verifier in this sequence in your local machine.
