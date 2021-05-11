@@ -13,9 +13,9 @@ interface IBaseVCData {
   }
   
   interface IExtendVCData {
-    partnerDID: string;
+    drivingLicenseID: string;
     country: string;
-    drivingClass: string;
+    // drivingClass: string;
     email: string;
     issuerOrganization: string;
   }
@@ -27,11 +27,11 @@ interface IBaseVCData {
   }
   
   const defaultExtendVCData: IExtendVCData = {
-    partnerDID: '',
+    drivingLicenseID: '',
     country: 'Singapore',
-    drivingClass: '1',
+    // drivingClass: '1',
     email: '',
-    issuerOrganization: 'Automobile Association of Singapore'
+    issuerOrganization: 'ABC Bank'
   }
 
 interface IPayload extends IBaseVCData{
@@ -117,15 +117,15 @@ const Application: React.FC = (): React.ReactElement => {
           </FormGroup>
 
           <FormGroup controlId='issueDate'>
-            <FormLabel style={{margin: '10px 0 0 0'}}>Date of Issuance:</FormLabel>
+            <FormLabel style={{margin: '10px 0 0 0'}}>Currency Type:</FormLabel>
             <FormControl name='issueDate' type='text' value={baseVCData.issueDate} onChange={e => updateBaseVC(e)}/>
           </FormGroup>
 
           <FormGroup controlId='drivingLicense'>
-            <FormLabel style={{margin: '10px 0 0 0'}}>Partner DID:</FormLabel>
-            <FormControl name='drivingLicenseID' type='text' value={extendVCData.partnerDID} onChange={e => updateExtendBaseVC(e)}/>
+            <FormLabel style={{margin: '10px 0 0 0'}}>Amount:</FormLabel>
+            <FormControl name='drivingLicenseID' type='text' value={extendVCData.drivingLicenseID} onChange={e => updateExtendBaseVC(e)}/>
           </FormGroup>
-
+{/* 
           <FormGroup controlId='drivingClass'>
             <FormLabel style={{margin: '10px 0 0 0'}}>Driving Class:</FormLabel>
             <FormControl name='drivingClass' as="select" value={extendVCData.drivingClass} onChange={e => updateExtendBaseVC(e)}>
@@ -141,7 +141,7 @@ const Application: React.FC = (): React.ReactElement => {
               <option>4A</option>
               <option>5</option>
             </FormControl>
-          </FormGroup>
+          </FormGroup> */}
 
           {/* <div style={{margin: '30px 0'}}>
             <p><strong>Step 2:</strong>Upload Proof of Driving License</p>
